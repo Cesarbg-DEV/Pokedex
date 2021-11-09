@@ -1,8 +1,5 @@
 from django.contrib import admin
-from .models import Pokemon
-from .models import Estadistica
-from .models import Evolucion
-from .models import Movimiento
+from .models import Pokemon, Estadistica, Evolucion, Movimiento
 
 admin.site.register(Pokemon)
 admin.site.register(Estadistica)

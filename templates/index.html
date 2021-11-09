@@ -13,10 +13,22 @@
         </div>
 {% endblock %}
 
+
 {% block pokedex_items %}
+    
     <div class="pokedex_items">
-        <div class="pokemon_cards">
-        
-        </div>
+        {% for p in pokemones %}
+            
+            <div class="pokemon_cards">
+                <div>{{p.nombre}}</div>
+                <div>{{p.id}}</div>
+                <div>{{p.especie}}</div>
+                <div>{{p.especie2}}</div>
+                <div><img src="{{p.img}}" alt="Pokemon-img" class="img-pok"></div>
+                
+                {{p.Estadisticas}}
+            </div>
+        {% endfor %}
     </div>
+    
 {% endblock %}

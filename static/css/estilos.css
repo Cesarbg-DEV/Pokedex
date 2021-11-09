@@ -76,7 +76,17 @@
     height: 224px;
     border-radius: 27px;
     margin: auto;
+    /* G R I D */
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
 }
+.img-pok{
+    width: 216px;
+    height: 139px;
+}
+
+
 
 
 /* R E S P O N S I V E */

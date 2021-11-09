@@ -3,11 +3,14 @@ from django.db import models
 class Pokemon(models.Model):
     nombre = models.CharField(max_length=50)
     especie = models.CharField(max_length=50)
+    especie2 = models.CharField(max_length=50,null=True)
     altura = models.IntegerField(default=2)
     peso = models.IntegerField(default=2)
     habilidades = models.CharField(max_length=50)
     genero = models.CharField(max_length=50)
+    img = models.ImageField(upload_to='static/img/',null=True, blank=True)
 
+    
     def __str__(self):
         return str(self.nombre) + " (" + str(self.id) + ") "
 
@@ -23,6 +26,7 @@ class Estadistica(models.Model):
     veldefensa = models.IntegerField(default=2)
     velocidad =  models.IntegerField(default=2)
     total = models.IntegerField(default=2)
+    pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE,null=True)
 
 class Evolucion(models.Model):
     nombreevo = models.CharField(max_length=50)
@@ -31,6 +35,7 @@ class Evolucion(models.Model):
     peso = models.IntegerField(default=2)
     habilidades = models.CharField(max_length=50)
     genero = models.CharField(max_length=50)
+    pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE,null=True)
 
     def __str__(self):
         return str(self.nombreevo) + " (" + str(self.id) + ") "
@@ -45,3 +50,4 @@ class Movimiento(models.Model):
     poder = models.IntegerField(default=2)
     accion = models.CharField(max_length=50)
     efecto = models.CharField(max_length=50)
+    pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE,null=True)
