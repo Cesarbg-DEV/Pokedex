@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block contenido %}
+        <div>
+            <div class="contenedor {{pkm.especie}}">
+                <div></div>
+                <div>{{pkm.nombre}}</div>
+                <div>{{pkm.id}}</div>
+                <div>{{pkm.especie}}</div>
+                <div>{{pkm.especie2}}</div>
+                <div><img src="../{{pkm.img}}" alt="pokemon-img"></div>
+                
+            </div> 
+            <div class="Acerca">
+                <h2>Acerca</h2>
+                <div>Tipo: {{pkm.especie}} , {{pkm.especie2}}</div>
+                <div>Altura: {{pkm.altura}}</div>
+                <div>Peso: {{pkm.peso}}</div>
+                <div>Habilidades: {{pkm.habilidades}}</div>
+            </div>
+            <div class="estadisticas">
+                <h2>Información Base</h2>
+                <div>Salud: {{pkm.estadistica_set.first.salud}}</div>
+                <div>Ataque: {{pkm.estadistica_set.first.ataque}}</div>
+                <div>Defensa{{pkm.estadistica_set.first.defensa}}</div>
+                <div>Vel. Ataque: {{pkm.estadistica_set.first.velataque}}</div>
+                <div>Vel. Defensa: {{pkm.estadistica_set.first.veldefensa}}</div>
+                <div>Velocidad: {{pkm.estadistica_set.first.velocidad}}</div>
+                <div>Total: {{pkm.estadistica_set.first.total}}</div>
+            </div>
+        </div>
+    {% endblock %}

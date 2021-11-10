@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Pokemon(models.Model):
     nombre = models.CharField(max_length=50)
     especie = models.CharField(max_length=50)
@@ -26,7 +27,9 @@ class Estadistica(models.Model):
     veldefensa = models.IntegerField(default=2)
     velocidad =  models.IntegerField(default=2)
     total = models.IntegerField(default=2)
-    pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE,null=True)
+    pokemon = models.ForeignKey(Pokemon,null=True,blank=True, on_delete=models.CASCADE)
+
+
 
 class Evolucion(models.Model):
     nombreevo = models.CharField(max_length=50)

@@ -22,5 +22,6 @@ urlpatterns = [
     #path('',include('pokedex.urls')),
     path('', views.pokemon, name='Pokemon'),
     #path('',pokemon),
+    path('pkm/<int:id>',views.pkm, name='pkm'),
 
 ]

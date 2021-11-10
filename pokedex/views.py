@@ -9,3 +9,6 @@ def pokemon(request, *args, **kwargs):
     pokemon = Pokemon.objects.all()
     response = {'pokemones': pokemon}
     return render(request,'index.html', response)
+def pkm(request,id):
+    pkm = Pokemon.objects.get(id=id)
+    return render(request,'pkm.html',{'pkm':pkm})

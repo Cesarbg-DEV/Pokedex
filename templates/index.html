@@ -19,15 +19,17 @@
     <div class="pokedex_items">
         {% for p in pokemones %}
             
-            <div class="pokemon_cards">
-                <div>{{p.nombre}}</div>
-                <div>{{p.id}}</div>
-                <div>{{p.especie}}</div>
-                <div>{{p.especie2}}</div>
-                <div><img src="{{p.img}}" alt="Pokemon-img" class="img-pok"></div>
-                
-                {{p.Estadisticas}}
-            </div>
+                <div class="pokemon_cards {{p.especie}}" id="pokemon_cards">
+                    
+                        <a href="pkm/{{p.id}}"><div class="nombre_pok">{{p.nombre}}</div></a>
+                        <div class="especie">{{p.especie}}</div>
+                        <div class="especie">{{p.especie2}}</div>
+                        <div class="img"><img src="{{p.img}}" alt="Pokemon-img"></div>
+                    
+                </div>
+            
+            
+            
         {% endfor %}
     </div>
     

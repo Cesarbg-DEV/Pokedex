@@ -66,29 +66,80 @@
 .pokedex_items{
     padding: 20px 5px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    align-items: space-between;
     min-height: 100vh;
+    padding-top: 134px;
+    margin: 0 auto;
+    max-width: 1200px;
+    justify-content: center;
 }
 .pokemon_cards{
     background: gray;
     width: 319px;
     height: 224px;
     border-radius: 27px;
-    margin: auto;
-    /* G R I D */
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    color: white;
+    /* F L E X */
+    display: flex;
+    padding-left: 20px;
+    border-radius:20px;
+    height:200px;
+    margin-top: 10px;
+    overflow: hidden;
+    flex-direction: column;
+    margin: 10px;
+
 }
-.img-pok{
-    width: 216px;
-    height: 139px;
+.especie{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.3);
+    width:5rem; 
+    margin: 3px;
+    line-height: 2rem;
+    font-size:18px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    
+}   
+.pokedex_items img{
+    width: 100%;
+    height: 141px;
+    padding-bottom: 15px;
+    z-index: 10;
+    
+}
+    .img{
+        position: absolute;
+        align-self: flex-end;
+        padding-top: 43px !important;
+        padding-right: 35px !important;
+    }
+
+.nombre_pok{
+    font-size:30px;
+
+}
+.Planta{
+    background: #49D0B0;
+}
+.Fuego{
+    background: #FC6C6D;
+}
+.Bicho{
+    background: #729F3F;
+}
+.Agua{
+    background: #76BEFE;
 }
 
 
-
-
+a{
+    text-decoration:none;
+    text-decoration-color: none;
+    color: #ffff;
+}
 /* R E S P O N S I V E */
 
 @media screen and (min-width: 480px) {
@@ -107,4 +158,35 @@
     .buscar:hover> .buscar_texto{
         width:900px;
     }
+}
+.pokemon_cards:hover{
+    animation: bounce 0.5s linear;
+}
+@keyframes bounce {
+    20%{
+        tranform: translateY(-6px);
+    }
+    40%{
+        tranform: translateY(0px);
+    }
+    60%{
+        tranform: translateY(-2px);
+    }
+    80%{
+        tranform: translateY(0px);
+    }
+}
+
+/* Datos Pokemones */
+.contenedor {
+    display: flex;
+    flex-direction: row;
+}
+.contenedor img{
+    width: auto;
+    height: 250px;
+    padding-bottom: 15px;
+}
+.estadisticas{
+    
 }
