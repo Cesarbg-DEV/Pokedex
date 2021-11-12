@@ -1,32 +1,73 @@
 {% extends 'base.html' %}
 {% load static %}
-    {% block contenido %}
-        <div>
-            <div class="contenedor {{pkm.especie}}">
-                <div></div>
-                <div>{{pkm.nombre}}</div>
-                <div>{{pkm.id}}</div>
-                <div>{{pkm.especie}}</div>
-                <div>{{pkm.especie2}}</div>
-                <div><img src="../{{pkm.img}}" alt="pokemon-img"></div>
-                
-            </div> 
-            <div class="Acerca">
-                <h2>Acerca</h2>
-                <div>Tipo: {{pkm.especie}} , {{pkm.especie2}}</div>
-                <div>Altura: {{pkm.altura}}</div>
-                <div>Peso: {{pkm.peso}}</div>
-                <div>Habilidades: {{pkm.habilidades}}</div>
+{% block contenido %}
+<div style="background-color: #49D0B0;">
+    <div class="contenedor {{pkm.especie}}" style="justify-content: space-around;">
+        <div></div>
+        <div style="display:flex; flex-direction: column; align-items: center; align-self: center; width: 20%;">
+            <div style="display: flex; width: 100%; justify-content: space-between;">
+                <div style="font-size: 2.5em; font-weight: bold; color: white;">{{pkm.nombre}}</div>
+                <div style="font-size: 2.5em; font-weight: bold; color: white;">#{{pkm.id}}</div>
             </div>
-            <div class="estadisticas">
-                <h2>Información Base</h2>
-                <div>Salud: {{pkm.estadistica_set.first.salud}}</div>
-                <div>Ataque: {{pkm.estadistica_set.first.ataque}}</div>
-                <div>Defensa{{pkm.estadistica_set.first.defensa}}</div>
-                <div>Vel. Ataque: {{pkm.estadistica_set.first.velataque}}</div>
-                <div>Vel. Defensa: {{pkm.estadistica_set.first.veldefensa}}</div>
-                <div>Velocidad: {{pkm.estadistica_set.first.velocidad}}</div>
-                <div>Total: {{pkm.estadistica_set.first.total}}</div>
+            <div style="font-size: 1em; font-weight: bold; color: white; display: flex; margin-top: 20px; width: 100%; justify-content: space-evenly;">
+                <div style="border-radius: 20px; background-color: lightgreen; padding: 10px 20px 10px 20px;">{{pkm.especie}}</div>
+                <div style="border-radius: 20px; background-color: lightgreen; padding: 10px 20px 10px 20px;">{{pkm.especie2}}</div>
             </div>
         </div>
-    {% endblock %}
+        <div><img src="../{{pkm.img}}" alt="pokemon-img"></div>        
+    </div> 
+    
+    <div style="background-color: white; border-radius: 40px 40px 0px 0px; display: flex; height: 60vh; justify-content: space-evenly; padding: 20px;">
+        <div class="Acerca" style="display: flex; flex-direction: column; width: 25%;">
+            <h2 style="text-align: center; padding: 20px;">Acerca</h2>
+            <div style="display: flex; justify-content: space-between;">
+                <p style="font-weight: bold; color: gray; font-size: 1.2em;">Tipo:</p>
+                <p style="font-weight: bold;">{{pkm.especie}} , {{pkm.especie2}}</p>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <p style="font-weight: bold; color: gray; font-size: 1.2em;">Altura:</p>
+                <p style="font-weight: bold;">{{pkm.altura}}</p>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <p style="font-weight: bold; color: gray; font-size: 1.2em;">Peso:</p>
+                <p style="font-weight: bold;">{{pkm.peso}}</p>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+                <p style="font-weight: bold; color: gray; font-size: 1.2em;">Habilidades:</p>
+                <p style="font-weight: bold;">{{pkm.habilidades}}</p>
+            </div>
+        </div>
+        <div class="estadisticas" style="display: flex; flex-direction: column; width: 25%;">
+            <h2 style="text-align: center; padding: 20px;">Información Base</h2>
+            <div style="display: flex; justify-content: space-between;">
+                <p style="font-weight: bold; color: gray; font-size: 1.2em;">Salud:</p>
+                <p style="font-weight: bold;">{{pkm.estadistica_set.first.salud}}</p>
+                </div>
+            <div style="display: flex; justify-content: space-between;">
+                <p style="font-weight: bold; color: gray; font-size: 1.2em;">Ataque:</p>
+                <p style="font-weight: bold;">{{pkm.estadistica_set.first.ataque}}</p>
+                </div>
+            <div style="display: flex; justify-content: space-between;">
+                <p style="font-weight: bold; color: gray; font-size: 1.2em;">Defensa:</p>
+                <p style="font-weight: bold;">{{pkm.estadistica_set.first.defensa}}</p>
+                </div>
+            <div style="display: flex; justify-content: space-between;">
+                <p style="font-weight: bold; color: gray; font-size: 1.2em;">Vel. Ataque:</p>
+                <p style="font-weight: bold;">{{pkm.estadistica_set.first.velataque}}</p>
+                </div>
+            <div style="display: flex; justify-content: space-between;">
+                <p style="font-weight: bold; color: gray; font-size: 1.2em;">Vel. Defensa:</p>
+                <p style="font-weight: bold;">{{pkm.estadistica_set.first.veldefensa}}</p>
+                </div>
+            <div style="display: flex; justify-content: space-between;">
+                <p style="font-weight: bold; color: gray; font-size: 1.2em;">Velocidad:</p>
+                <p style="font-weight: bold;">{{pkm.estadistica_set.first.velocidad}}</p>
+                </div>
+            <div style="display: flex; justify-content: space-between;">
+                <p style="font-weight: bold; color: gray; font-size: 1.2em;">Total:</p>
+                <p style="font-weight: bold;">{{pkm.estadistica_set.first.total}}</p>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
