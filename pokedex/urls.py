@@ -11,4 +11,5 @@ urlpatterns = [
     #path('',views.pokemon,name='Pokemon'),
     #path('',pokemon.as_view(),name='Pokemon'),
     path('pkm/<int:id>',views.pkm, name='pkm'),
+    path('pokemon/new', views.pokemon_new, name="pokemon New"),
 ]

@@ -187,6 +187,36 @@ a{
     height: 250px;
     padding-bottom: 15px;
 }
-.estadisticas{
-    
+/* B U T T O N  N E W*/
+.container{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+.nuevo a{
+    display:block;
+    text-decoration: none;
+    background: #cc2b2b;
+    color: #fff;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.4);
+    transition: all 500 ease;
+}
+
+.nuevo a:hover{
+    background: #fff;
+    color: #cc2b2b;
+}
+
+form {
+    position:absolute;
+    margin: 0 auto;
+    width: 300px;
+    background-color: transparent;
+    padding: 100px;
+    margin-top: auto;
 }
