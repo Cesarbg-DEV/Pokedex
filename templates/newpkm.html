@@ -1,0 +1,48 @@
+
+
+{% block header %}
+{% endblock %}
+
+<button>
+    <a href= "" class="boton">
+        <img src="https://img.icons8.com/ios-glyphs/30/000000/refresh--v2.png"/>
+    </a></button>
+    <button class="btn btn-outline-dark d-inline-block text-light mr-2 mb-3">
+        <a href= "{% url 'Home' %}" class="boton lead align-middle">
+            <img src="https://img.icons8.com/office/30/000000/home--v2.png"/>
+        </a></button>
+    <button>
+         <a href= "" class="boton">
+            <img src="https://img.icons8.com/dusk/30/000000/delete-property.png"/>
+        </a></button>
+        
+        
+
+<html lang="es">
+    <body style="background-image: url('/static/img/pkmn.png'); background-repeat: no-repeat; 
+    position:center;
+    margin: 0 auto;
+    width: 300px;
+    background-color: transparent;
+    padding: 120px;
+    margin-top: auto;
+    background-position: left center;" >
+
+    
+{% block pokedex_items %}
+
+<div class="body">
+
+
+<form method="post" class="pokemon-form">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">
+        <img src="https://img.icons8.com/offices/30/000000/save.png"/></button>
+
+</form>
+
+</div>
+</body>
+{% endblock %}
+</html>
